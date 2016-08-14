@@ -48,8 +48,9 @@ function custom_query_search_callback() {
     $response = array();
   	// Never Use $_POST or $_GET variables without proper care Sanatization
     $query = new WP_Query( array(
-        'posts_per_page' => absint( $_POST['qty'] ),
-        'post_type' => wp_kses( $_POST['post_type'], array() ),
+        'posts_per_page' => absint( $_POST['param1'] ),
+        'post_type' => wp_kses( $_POST['param2'], array() ),
+        'OTHER QUERY VAR HERE' => wp_kses( $_POST['param3'], array() ),
     ) );
 
     // If we don't have posts matching this query return status as false
