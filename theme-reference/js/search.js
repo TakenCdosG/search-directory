@@ -1,4 +1,4 @@
-var App = function ($) {
+var Search = function ($) {
 
 	// IE mode
 	var isRTL = false;
@@ -127,8 +127,9 @@ var App = function ($) {
 
     return {
         init: function () {
-            // init core variables
+            // Init core variables
             handleInit();
+            // Handle Search Directory functionality
             handleSearchDirectory();
         },
     };

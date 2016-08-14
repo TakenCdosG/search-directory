@@ -29,6 +29,12 @@ add_action( 'wp_enqueue_scripts', 'load_scripts' );
 add_action( 'wp_ajax_bordoni_query_posts', 'custom_query_search_callback' );
 add_action( 'wp_ajax_nopriv_bordoni_query_posts', 'custom_query_search_callback' );
 
+/**
+ * Load needed js and Css scripts.
+ *
+ * @since 1.0.0
+ *
+ */
 function load_scripts() {
     // Define js directory
     $js_dir = get_template_directory_uri() . '/js/';
@@ -42,8 +48,16 @@ function load_scripts() {
 
     // CSS
     wp_enqueue_style( 'search-directory', $css_dir . 'search-directory.css' );
+
 }
 
+/**
+ * Custom Ajax CallBack.
+ *
+ * @since 1.0.0
+ *
+ * @return Json Response
+ */
 function custom_query_search_callback() {
     $response = array();
   	// Never Use $_POST or $_GET variables without proper care Sanatization
@@ -71,21 +85,38 @@ function custom_query_search_callback() {
     exit( json_encode( $response ) );
 }
 
-function build_html_response($query_result){
+/**
+ * Build html response from the result query.
+ *
+ * @since 1.0.0
+ *
+ * @param $query_result WP_Query result to build the html response.
+ * @return Html Output
+ */
+function build_html_response($query_result) {
 	$mockup = "";
 	// Your code here to build html response..
 	return $mockup;
 }
 
-function build_coordinates_response($query_result){
+/**
+ * Build coordinates array response from the result query.
+ *
+ * @since 1.0.0
+ *
+ * @param $query_result WP_Query result to build the coordinates array.
+ * @return array
+ */
+function build_coordinates_response($query_result) {
 	$coordinates = array();
 	// Your code here to build coordinates array response..
 	return $coordinates;
 } 
 
-// Shortcode
-function search_directory_shortcode($atts)
-{
+/*
+* Shortcode
+*/
+function search_directory_shortcode($atts) {
 
     wp_enqueue_style('search-directory');
     wp_enqueue_script('jquery-validate');
