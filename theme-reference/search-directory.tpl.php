@@ -25,7 +25,7 @@
 		  <button type="submit" class="btn btn-default">Submit</button>
 		</form>
 		<div class="SEARCH-RESULT-DIV-CLASS-HERE" id="SEARCH-RESULT-DIV-ID-HERE">
-		
+		   <!-- HERE DYNAMIC CONTENT FROM SEARCH RESULTS -->
 		</div>
     </div>
 </section>
