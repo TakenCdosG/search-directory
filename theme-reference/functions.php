@@ -117,7 +117,6 @@ function build_coordinates_response($query_result) {
 * Shortcode
 */
 function search_directory_shortcode($atts) {
-
   wp_enqueue_style('search-directory');
   wp_enqueue_script('jquery-validate');
   wp_enqueue_script('search-directory');
